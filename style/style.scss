@@ -283,7 +283,6 @@ template {
 }
     .request {
         font-family: 'Gilroy-SemiBold';
-        background: $btn_primary;
         color: #26333c;
         @include flex;
         padding: 21px 0 21px 35px;
@@ -294,7 +293,7 @@ template {
          content: '';
          top: 0;
          right: 0;
-         left: 99%;
+         left: 0;
          width: 999%;
          height: 100%;
          background: $btn_primary;
@@ -331,7 +330,7 @@ template {
        display: none;    
     }
     .place{
-        @include flex_center;
+        @include flex;
         color: #26333c;
         font-family: 'Gilroy Regular';
         &__text{
@@ -361,7 +360,7 @@ template {
         }
     }
     .place a{
-        @include flex_center;
+        @include flex;
     }
     .form{
         padding: 20px;
@@ -375,12 +374,17 @@ template {
             margin-bottom: 15px;
         }
     }
+    .block__wrapper{
+        max-width: 1421px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
     .main{
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 25px 10px 25px 10px;
-        max-width: 1128px;
         margin: 0 auto;
         &__thin{
         font-size: 12px;
@@ -426,10 +430,14 @@ template {
             }
         }
     }
+    .mob__place{
+        padding-left: 10px;
+    }
     .social{
-         @include flex_center;
+         @include flex;
+         padding-left: 10px;
          &__footer {
-             @include flex_center;
+             @include flex;
          }
         &__item{
             background: #eef3f5;
@@ -725,7 +733,6 @@ template {
 .first__footer,
 .second__footer{
     display: flex;
-    align-items: center;
     justify-content: space-around;
     flex-basis: 50%;
 }
@@ -734,6 +741,9 @@ template {
 @media screen and (max-width: 1390px) {
     .main {
         padding: 25px 0 25px 0;
+    }
+    .item{
+        width: 250px;
     }
 }
 
@@ -792,6 +802,9 @@ template {
             height: 100%;
             z-index: 1;
         }
+        .footer__number{
+            width: 300px;
+        }
         .main__chanel,
         .main__change {
             z-index: 2;
@@ -806,6 +819,9 @@ template {
 
 }
 @media screen and (max-width: 991px){
+    .item {
+    width: 250px;
+}
     .call__icon {
         display: block;
         margin-right: 10px;
@@ -1036,12 +1052,31 @@ template {
          margin-right: 0;
          margin-left: 70px;
      }
-     .footer{
-         flex-wrap: wrap;
-     }
+     .first__footer,
+    .second__footer{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        flex-basis: 50%;
+    }
+    .footer__number{
+        width: auto;
+    }
+    .footer__address{
+        padding-left: 20px;
+    }
+    .footer__number,
+    .footer__pdf{
+        margin-bottom: 30px;
+    }
+ 
 }
 
 @media screen and (max-width:768px ){
+        .footer__address {
+            padding-left: 0;
+        }
     .social__footer{
         justify-content: flex-start;
     }
@@ -1053,15 +1088,11 @@ template {
     .footer__pdf{
         margin-bottom: 30px;
     }
+   
     .first__nums,
-    .second__nums,
-    .first__footer,
-    .second__footer{
+    .second__nums{
         display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: flex-start;
-        flex-basis: 50%;
+        align-items: stretch;
     }
     .item{
         width: 250px;
@@ -1132,17 +1163,34 @@ template {
     .main__change br {
         display: none;
     }
-
-    .main__chanel__description {
-        margin-bottom: 30px;
+    .last__img{
+        height: 220px;
     }
     .num{
         width: 220px;
     }
         .numbers__years,
-        .numbers__procent {
+         .numbers__clients{
             margin-bottom: 30px;
         }
+        .numbers {
+    justify-content: center;
+}
+    .services {
+        flex-direction: column;
+    }
+    .services__text {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .second__service, .fourth__service {
+    flex-direction: column-reverse;
+    }
+    .services__title, .services__description {
+    text-align: center;
+    margin-bottom: 20px;
+}
         
 }
 @media screen and (max-width: 715px){
@@ -1178,30 +1226,26 @@ template {
     .service_img {
         width: 295px;
     }
+    .main__chanel__title {
+    margin-bottom: 10px;
+    text-align: center;
+}
+}
+@media screen and (max-width: 619px){
+    .footer{
+        justify-content: center;
+    }
 }
 @media screen and (max-width: 545px){
     .footer__title{
         text-align: center;
     }
-    .social__footer {
-        justify-content: center;
-    }
+    // .social__footer {
+    //     justify-content: center;
+    // }
     .item{
         width: auto;
     }
-        .services {
-            flex-direction: column;
-        }
-        .services__title,
-        .services__description{
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .services__text{
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
         .services__wrapper{
                 padding: 30px 0 30px 0;
         }
@@ -1215,11 +1259,15 @@ template {
         .numbers__tvusers{
             margin-right: 0;
         }
-        .num {
-            width: 180px;
+            .num {
+            width: 158px;
+        }
+        .col{
+            font-size: 2rem;
         }
         .footer {
             flex-direction: column;
+            align-items: center;
             &__title{
                 margin-bottom: 10px;
             }
@@ -1243,11 +1291,13 @@ template {
 
 @media screen and (max-width: 450px){
         .logo__mob {
-            width: 170px;
-            height: 38px;
+            width: 200px;
+            height: 35px;
+            margin-left: 55px;
         }
         .main_bg__wrapper{
             padding: 32px 10px 32px 10px;
+            margin-top: 60px;
         }
         .header__call {
             padding: 16px;
@@ -1266,7 +1316,7 @@ template {
 }
 @media screen and (max-width: 425px){
     .video__play {
-        top: 41%;
+        top: 43%;
     }
     .main__chanel__title{
         margin-bottom: 0;
@@ -1285,24 +1335,31 @@ template {
        align-items: center;
        justify-content: center; 
    }
-   .numbers__procent{
-       margin-bottom: 30px;
-   }
    .main__chanel__description{
        text-align: center;
    }
    .main_bg__wrapper {
     padding: 43px 10px 32px 10px;
 }
+.num::before {
+    display: none;
+}
+.num {
+    width: 155px;
+    padding: 0;
+}
 }
 
 @media screen and (max-width: 350px){
+ div.mob__place{
+        margin-left: 0;
+    }
  .logo__mob{
-    width: 150px;
+    width: 175px;
     height: 30px;
   }
-  .header__call {
-    padding: 16px 15px;
+.header__call {
+    padding: 16px 12px;
 }
 .main__chanel__title {
     font-size: 18px;

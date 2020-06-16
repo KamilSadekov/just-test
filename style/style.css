@@ -283,7 +283,6 @@ template {
 
 .request {
   font-family: "Gilroy-SemiBold";
-  background: #ffdc76;
   color: #26333c;
   display: flex;
   align-items: center;
@@ -296,7 +295,7 @@ template {
   content: "";
   top: 0;
   right: 0;
-  left: 99%;
+  left: 0;
   width: 999%;
   height: 100%;
   background: #ffdc76;
@@ -338,7 +337,6 @@ template {
 .place {
   display: flex;
   align-items: center;
-  justify-content: center;
   color: #26333c;
   font-family: "Gilroy Regular";
 }
@@ -371,7 +369,6 @@ template {
 .place a {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .form {
@@ -387,12 +384,18 @@ template {
   margin-bottom: 15px;
 }
 
+.block__wrapper {
+  max-width: 1421px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
 .main {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 25px 10px 25px 10px;
-  max-width: 1128px;
   margin: 0 auto;
 }
 .main__thin {
@@ -439,15 +442,18 @@ template {
   display: flex;
 }
 
+.mob__place {
+  padding-left: 10px;
+}
+
 .social {
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-left: 10px;
 }
 .social__footer {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 .social__item {
   background: #eef3f5;
@@ -773,7 +779,6 @@ template {
 .first__footer,
 .second__footer {
   display: flex;
-  align-items: center;
   justify-content: space-around;
   flex-basis: 50%;
 }
@@ -781,6 +786,10 @@ template {
 @media screen and (max-width: 1390px) {
   .main {
     padding: 25px 0 25px 0;
+  }
+
+  .item {
+    width: 250px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -844,6 +853,10 @@ template {
     z-index: 1;
   }
 
+  .footer__number {
+    width: 300px;
+  }
+
   .main__chanel,
 .main__change {
     z-index: 2;
@@ -859,6 +872,10 @@ template {
   }
 }
 @media screen and (max-width: 991px) {
+  .item {
+    width: 250px;
+  }
+
   .call__icon {
     display: block;
     margin-right: 10px;
@@ -1107,11 +1124,33 @@ template {
     margin-left: 70px;
   }
 
-  .footer {
-    flex-wrap: wrap;
+  .first__footer,
+.second__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-basis: 50%;
+  }
+
+  .footer__number {
+    width: auto;
+  }
+
+  .footer__address {
+    padding-left: 20px;
+  }
+
+  .footer__number,
+.footer__pdf {
+    margin-bottom: 30px;
   }
 }
 @media screen and (max-width: 768px) {
+  .footer__address {
+    padding-left: 0;
+  }
+
   .social__footer {
     justify-content: flex-start;
   }
@@ -1127,14 +1166,9 @@ template {
   }
 
   .first__nums,
-.second__nums,
-.first__footer,
-.second__footer {
+.second__nums {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-basis: 50%;
+    align-items: stretch;
   }
 
   .item {
@@ -1223,8 +1257,8 @@ template {
     display: none;
   }
 
-  .main__chanel__description {
-    margin-bottom: 30px;
+  .last__img {
+    height: 220px;
   }
 
   .num {
@@ -1232,8 +1266,31 @@ template {
   }
 
   .numbers__years,
-.numbers__procent {
+.numbers__clients {
     margin-bottom: 30px;
+  }
+
+  .numbers {
+    justify-content: center;
+  }
+
+  .services {
+    flex-direction: column;
+  }
+
+  .services__text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .second__service, .fourth__service {
+    flex-direction: column-reverse;
+  }
+
+  .services__title, .services__description {
+    text-align: center;
+    margin-bottom: 20px;
   }
 }
 @media screen and (max-width: 715px) {
@@ -1274,34 +1331,24 @@ template {
   .service_img {
     width: 295px;
   }
+
+  .main__chanel__title {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 619px) {
+  .footer {
+    justify-content: center;
+  }
 }
 @media screen and (max-width: 545px) {
   .footer__title {
     text-align: center;
   }
 
-  .social__footer {
-    justify-content: center;
-  }
-
   .item {
     width: auto;
-  }
-
-  .services {
-    flex-direction: column;
-  }
-
-  .services__title,
-.services__description {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .services__text {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
   }
 
   .services__wrapper {
@@ -1322,11 +1369,16 @@ template {
   }
 
   .num {
-    width: 180px;
+    width: 158px;
+  }
+
+  .col {
+    font-size: 2rem;
   }
 
   .footer {
     flex-direction: column;
+    align-items: center;
   }
   .footer__title {
     margin-bottom: 10px;
@@ -1354,12 +1406,14 @@ template {
 }
 @media screen and (max-width: 450px) {
   .logo__mob {
-    width: 170px;
-    height: 38px;
+    width: 200px;
+    height: 35px;
+    margin-left: 55px;
   }
 
   .main_bg__wrapper {
     padding: 32px 10px 32px 10px;
+    margin-top: 60px;
   }
 
   .header__call {
@@ -1382,7 +1436,7 @@ template {
 }
 @media screen and (max-width: 425px) {
   .video__play {
-    top: 41%;
+    top: 43%;
   }
 
   .main__chanel__title {
@@ -1405,10 +1459,6 @@ template {
     justify-content: center;
   }
 
-  .numbers__procent {
-    margin-bottom: 30px;
-  }
-
   .main__chanel__description {
     text-align: center;
   }
@@ -1416,15 +1466,28 @@ template {
   .main_bg__wrapper {
     padding: 43px 10px 32px 10px;
   }
+
+  .num::before {
+    display: none;
+  }
+
+  .num {
+    width: 155px;
+    padding: 0;
+  }
 }
 @media screen and (max-width: 350px) {
+  div.mob__place {
+    margin-left: 0;
+  }
+
   .logo__mob {
-    width: 150px;
+    width: 175px;
     height: 30px;
   }
 
   .header__call {
-    padding: 16px 15px;
+    padding: 16px 12px;
   }
 
   .main__chanel__title {
