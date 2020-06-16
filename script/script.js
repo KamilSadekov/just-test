@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var modalButtons = document.querySelectorAll('.js-open-modal'),
         overlay = document.querySelector('.js-overlay-modal'),
         closeButtons = document.querySelectorAll('.js-modal-close');
-    modalButtons.forEach(function (item) {
+        modalButtons.forEach(function (item) {
         item.addEventListener('click', function (e) {
             e.preventDefault();
             var modalId = this.getAttribute('data-modal'),
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
             var parentModal = this.closest('.modal');
             parentModal.classList.remove('active');
             overlay.classList.remove('active');
-            parentModal.remove('#vid');
             overlay.remove('#vid');
         });
     });
