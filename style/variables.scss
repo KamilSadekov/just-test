@@ -1,0 +1,12 @@
+$main_blue: #3959e0;
+$dark_blue: #3251d2;
+$btn_primary: #ffdc76;
+@mixin flex_center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex{
+    display: flex;
+    align-items: center;
+}
