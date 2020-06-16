@@ -223,7 +223,6 @@ template {
 .header{
     font-family: 'Gilroy-SemiBold';
     position: relative;
-    max-width: 1200px;
     &::before{
         content: '';
         position: absolute;
@@ -238,7 +237,8 @@ template {
         margin: 0 auto;
     }
     &__wrapper{
-        @include flex_center;
+        @include flex;
+        justify-content: space-between;
     }
     &__panel{
         @include flex;
@@ -281,11 +281,18 @@ template {
 .center{
     flex: 1 0;
 }
+.buttons_wrapper{
+    display: flex;
+
+}
+.header__call{
+    font-family: 'Gilroy-SemiBold';
+}
     .request {
         font-family: 'Gilroy-SemiBold';
         color: #26333c;
         @include flex;
-        padding: 21px 0 21px 35px;
+        padding: 21px 35px;
         position: relative;
         z-index: 1;
         cursor: pointer;
@@ -363,12 +370,17 @@ template {
         @include flex;
     }
     .form{
+        font-family: 'Gilroy-SemiBold';
         padding: 20px;
         &__label{
             margin-bottom: 5px;
         }
         &__input{
             margin-bottom: 15px;
+                width: 100%;
+                padding: 8px;
+                font-family: 'Gilroy-SemiBold';
+                
         }
         &__check{
             margin-bottom: 15px;
@@ -376,8 +388,6 @@ template {
     }
     .block__wrapper{
         max-width: 1421px;
-        display: flex;
-        justify-content: space-between;
         margin: 0 auto;
     }
     .main{
@@ -507,7 +517,6 @@ template {
 }
 .request__icon{display: none;}
 .numbers{
-    padding: 0 10px;
     &__wrapper{
         background: #eef3f5;
         padding: 90px 0 90px 0;
@@ -719,6 +728,9 @@ template {
 .button{
     width: 216px;
     display: block;
+}
+.modal-btn{
+    width: 100%;
 }
 .col{
     display: flex;
@@ -1074,6 +1086,18 @@ template {
 }
 
 @media screen and (max-width:768px ){
+    .form__check {
+         margin-bottom: 0; 
+    }
+    .check_{
+        margin-bottom: 20px;
+    }
+    .first__nums,
+    .second__nums {
+        display: flex;
+        justify-content: space-around;
+        flex-basis: 100%;
+    }
         .footer__address {
             padding-left: 0;
         }
@@ -1087,12 +1111,6 @@ template {
     .footer__number,
     .footer__pdf{
         margin-bottom: 30px;
-    }
-   
-    .first__nums,
-    .second__nums{
-        display: flex;
-        align-items: stretch;
     }
     .item{
         width: 250px;
@@ -1173,9 +1191,6 @@ template {
          .numbers__clients{
             margin-bottom: 30px;
         }
-        .numbers {
-    justify-content: center;
-}
     .services {
         flex-direction: column;
     }
@@ -1201,14 +1216,37 @@ template {
     .request__text {
         display: none;
     }
+    .buttons_wrapper {
+        width: 50%;
+    }
     .request {
         padding: 11px 0;
-        width: 20%;
+        width: 50px;
+        // min-width: 70px;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
     }
 }
 @media screen and (max-width: 630px){
+       .first__nums,
+       .second__nums {
+           display: flex;
+           justify-content: space-between;
+           flex-basis: 100%;
+       }
+    .call{
+        display: none;
+    }
+    .call__icon{
+        margin: 0;
+    }
+        .first__nums,
+        .second__nums {
+            display: flex;
+            align-items: stretch;
+            flex-basis: 100%;
+            justify-content: space-between;
+        }
     .main__chanel {
         margin-right: 0;
         align-items: center;
@@ -1230,6 +1268,9 @@ template {
     margin-bottom: 10px;
     text-align: center;
 }
+        .numbers {
+            justify-content: space-between;
+        }
 }
 @media screen and (max-width: 619px){
     .footer{
@@ -1320,11 +1361,6 @@ template {
     }
     .main__chanel__title{
         margin-bottom: 0;
-    }
-    .numbers{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
     .numbers__clients{
         margin-bottom: 30px;

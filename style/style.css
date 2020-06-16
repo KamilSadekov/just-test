@@ -216,7 +216,6 @@ template {
 .header {
   font-family: "Gilroy-SemiBold";
   position: relative;
-  max-width: 1200px;
 }
 .header::before {
   content: "";
@@ -234,7 +233,7 @@ template {
 .header__wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 .header__panel {
   display: flex;
@@ -281,12 +280,20 @@ template {
   flex: 1 0;
 }
 
+.buttons_wrapper {
+  display: flex;
+}
+
+.header__call {
+  font-family: "Gilroy-SemiBold";
+}
+
 .request {
   font-family: "Gilroy-SemiBold";
   color: #26333c;
   display: flex;
   align-items: center;
-  padding: 21px 0 21px 35px;
+  padding: 21px 35px;
   position: relative;
   z-index: 1;
   cursor: pointer;
@@ -372,6 +379,7 @@ template {
 }
 
 .form {
+  font-family: "Gilroy-SemiBold";
   padding: 20px;
 }
 .form__label {
@@ -379,6 +387,9 @@ template {
 }
 .form__input {
   margin-bottom: 15px;
+  width: 100%;
+  padding: 8px;
+  font-family: "Gilroy-SemiBold";
 }
 .form__check {
   margin-bottom: 15px;
@@ -386,8 +397,6 @@ template {
 
 .block__wrapper {
   max-width: 1421px;
-  display: flex;
-  justify-content: space-between;
   margin: 0 auto;
 }
 
@@ -533,7 +542,6 @@ template {
 }
 
 .numbers {
-  padding: 0 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -763,6 +771,10 @@ template {
 .button {
   width: 216px;
   display: block;
+}
+
+.modal-btn {
+  width: 100%;
 }
 
 .col {
@@ -1147,6 +1159,21 @@ template {
   }
 }
 @media screen and (max-width: 768px) {
+  .form__check {
+    margin-bottom: 0;
+  }
+
+  .check_ {
+    margin-bottom: 20px;
+  }
+
+  .first__nums,
+.second__nums {
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 100%;
+  }
+
   .footer__address {
     padding-left: 0;
   }
@@ -1163,12 +1190,6 @@ template {
   .footer__number,
 .footer__pdf {
     margin-bottom: 30px;
-  }
-
-  .first__nums,
-.second__nums {
-    display: flex;
-    align-items: stretch;
   }
 
   .item {
@@ -1270,10 +1291,6 @@ template {
     margin-bottom: 30px;
   }
 
-  .numbers {
-    justify-content: center;
-  }
-
   .services {
     flex-direction: column;
   }
@@ -1303,14 +1320,41 @@ template {
     display: none;
   }
 
+  .buttons_wrapper {
+    width: 50%;
+  }
+
   .request {
     padding: 11px 0;
-    width: 20%;
+    width: 50px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
   }
 }
 @media screen and (max-width: 630px) {
+  .first__nums,
+.second__nums {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 100%;
+  }
+
+  .call {
+    display: none;
+  }
+
+  .call__icon {
+    margin: 0;
+  }
+
+  .first__nums,
+.second__nums {
+    display: flex;
+    align-items: stretch;
+    flex-basis: 100%;
+    justify-content: space-between;
+  }
+
   .main__chanel {
     margin-right: 0;
     align-items: center;
@@ -1335,6 +1379,10 @@ template {
   .main__chanel__title {
     margin-bottom: 10px;
     text-align: center;
+  }
+
+  .numbers {
+    justify-content: space-between;
   }
 }
 @media screen and (max-width: 619px) {
@@ -1441,12 +1489,6 @@ template {
 
   .main__chanel__title {
     margin-bottom: 0;
-  }
-
-  .numbers {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 
   .numbers__clients {
