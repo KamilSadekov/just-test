@@ -1281,6 +1281,9 @@ template {
     .footer__title{
         text-align: center;
     }
+    .services__description br{
+       display: none;
+    }
     // .social__footer {
     //     justify-content: center;
     // }

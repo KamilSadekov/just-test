@@ -1395,6 +1395,10 @@ template {
     text-align: center;
   }
 
+  .services__description br {
+    display: none;
+  }
+
   .item {
     width: auto;
   }
