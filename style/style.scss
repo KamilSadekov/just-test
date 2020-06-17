@@ -248,6 +248,7 @@ template {
             @include flex_center;
             padding-left: 0;
             &__item{
+             transition: all 0.3s ease;
              color: #fff;
              list-style: none;
              text-transform: uppercase;

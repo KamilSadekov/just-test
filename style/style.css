@@ -248,6 +248,7 @@ template {
   padding-left: 0;
 }
 .header__panel__menu__item {
+  transition: all 0.3s ease;
   color: #fff;
   list-style: none;
   text-transform: uppercase;
