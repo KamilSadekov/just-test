@@ -971,6 +971,22 @@ template {
     z-index: 4;
   }
 
+  .toggle_mob {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 65px 0;
+    list-style: none;
+    background-color: #3959e0;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.25s;
+  }
+
   .menu__btn {
     display: flex;
     align-items: center;

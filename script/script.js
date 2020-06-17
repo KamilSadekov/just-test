@@ -71,15 +71,71 @@ function updateHandler(index) {
             $('body,html').animate({ scrollTop: top }, 1500);
         });
 });
+    $(document).ready(function () {
+        $("#mob_menu").on("click", "a", function (event) {
+            event.preventDefault();
+            var id = $(this).attr('href'),
+                top = $(id).offset().top;
 
-
- 
-
-$(document).ready(function () {
-    $("#mob_menu").on("click", "a", function (event) {
-        event.preventDefault();
-        var id = $(this).attr('href'),
-            top = $(id).offset().top;
-        $('body,html').animate({ scrollTop: top }, 1500);
+            $('body,html').animate({ scrollTop: top }, 1500);
+            $('.menu__item').click(function(){
+                $('.menu__item').closest('.menu__box').addClass('toggle_mob');
+                $('#menu__toggle').removeAttr('checked');
+            });
+            if ($('#menu__toggle').is(':checked')) {
+                $('.menu__item').closest('.menu__box').removeClass('toggle_mob');
+            }
+        });
     });
-});
+
+
+
+
+
+// function validateForm(form) {
+//     $(form).validate({
+//         errorClass: "invalid",
+//         rules: {
+//             policyCheckbox: "required",
+//             userName: {
+//                 required: true,
+//                 minlength: 2,
+//                 maxlength: 10
+//             },
+//             userPhone: "required",
+//             userQuetion: {
+//                 required: true,
+//                 minlength: 20,
+//                 maxlength: 400
+//             },
+//             // compound rule
+//             userEmail: {
+//                 required: true,
+//                 email: true
+//             }
+//         },
+//         errorElement: "div",
+//         messages: {
+//             userName: {
+//                 required: "Имя обязательно",
+//                 minlength: "Имя не короче двух букв"
+//             },
+//             policyCheckbox: "Подтвердите согланисе на обработку данных",
+//             userPhone: "Телефон обязателен",
+//             userQuetion: {
+//                 required: "Вопрос обязателен",
+//                 minlength: "Вопрос слишком короткий",
+//                 maxlength: "Слишком длинный вопрос"
+//             },
+//             userEmail: {
+//                 required: "Обязательно укажите email",
+//                 email: "Введите в формате name@domain.com"
+//             }
+//         }
+//     });
+// }
+// validateForm('.modal__form');
+// validateForm('.control__form');
+// validateForm('.footer__form');
+
+// $('[type=tel]').mask('+7 (000) 000-00-00', { placeholder: "+7 (___) ___-__-__" });
